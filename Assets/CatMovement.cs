@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CatMovement : MonoBehaviour {
+    // Use this for initialization
     public Rigidbody rigidbody;
+    public Transform spot; 
+    private NavMeshAgent navMeshAgent;
     float TurnTimer = 0;
     float TurnRate = 0;
     public float speed = 30;
-	// Use this for initialization
+	
+
 	void Start () {
-		
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.destination = spot.position;
 	}
 	
 	// Update is called once per frame
@@ -23,8 +29,8 @@ public class CatMovement : MonoBehaviour {
             TurnRate = Random.Range(-180, 180);
         }
 
-        TurnAtRate(TurnRate);
-        rigidbody.AddForce(transform.forward * speed, ForceMode.Acceleration);
+        //TurnAtRate(TurnRate);
+        //rigidbody.AddForce(transform.forward * speed, ForceMode.Acceleration);
 	}
 
     private void TurnAtRate(float rate)
