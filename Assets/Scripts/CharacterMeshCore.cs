@@ -1,9 +1,17 @@
 ﻿using MathExtensions;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Utilities;
 
-public class CharacterMeshCore : MonoBehaviour {
+public class CharacterMeshCore : MonoBehaviour
+{
+
+    public enum VelocityMethod { Rigidbody, NavMeshAgent }
+
+    [Header("Configuration")]
+    [SerializeField]
+    private VelocityMethod velocityMethod;
 
     [Header("Feel")]
     [SerializeField]
@@ -20,9 +28,11 @@ public class CharacterMeshCore : MonoBehaviour {
     private bool drawGizmos = false;
 
     private Rigidbody rb;
+    private NavMeshAgent nma;
     private Animator animator;
 
-    private enum CharacterParam {
+    private enum CharacterParam
+    {
         Idle, Walk, Run,
         Pass, Reach, PassMirror, ReachMirror
     }
@@ -59,6 +69,7 @@ public class CharacterMeshCore : MonoBehaviour {
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
+        nma = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         InitializeStaticData();
         lastFrame = animatorParameterMap[CharacterParam.Idle];
@@ -70,25 +81,30 @@ public class CharacterMeshCore : MonoBehaviour {
             new Vector3(1f, 1f)
         });
     }
-    
-	void Update () {
-        if (!rb) return;
-        var flattenedVelocity = rb.velocity.Flatten().normalized;
-		if (rb.velocity.Flatten().magnitude > velocityDeadZone)
+
+
+    private Vector3 velocity;
+
+    void Update()
+    {
+        velocity = velocityMethod == VelocityMethod.Rigidbody ? rb.velocity : nma.velocity;
+        var flattenedVelocity = velocity.Flatten().normalized;
+        if (velocity.Flatten().magnitude > velocityDeadZone)
         {
             var velocityRotation = Quaternion.LookRotation(flattenedVelocity);
             var targetRotation = Quaternion.Slerp(velocityRotation, velocityRotation * GetTiltRotation(), Time.deltaTime * tiltDamping);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationDamping);
         }
         if (!animator || animatorParameterMap == null) return;
-        radius = Mathf.Clamp(rb.velocity.Flatten().magnitude, 0.1f, 1f);
-        speedOffset += rb.velocity.Flatten().magnitude / radius * Time.deltaTime;
+        radius = Mathf.Clamp(velocity.Flatten().magnitude, 0.1f, 1f);
+        speedOffset += velocity.Flatten().magnitude / radius * Time.deltaTime;
         if (flattenedVelocity.magnitude < velocityDeadZone)
         {
             animator.SetFloat(animatorParameterMap[CharacterParam.Idle], 1f);
             animator.SetFloat(animatorParameterMap[CharacterParam.Walk], 0f);
             animator.SetFloat(animatorParameterMap[CharacterParam.Run], 0f);
-        } else
+        }
+        else
         {
             UpdateAnimator();
         }
@@ -105,7 +121,7 @@ public class CharacterMeshCore : MonoBehaviour {
         animator.SetFloat(animatorParameterMap[CharacterParam.Run], splineSamples.Sample(r));
         int quantized = Mathf.FloorToInt((Mathf.Rad2Deg * speedOffset) / 360f * 8f);
         int targetFrame = 0;
-        switch(quantized % 4)
+        switch (quantized % 4)
         {
             case 0: targetFrame = animatorParameterMap[CharacterParam.Pass]; break;
             case 1: targetFrame = animatorParameterMap[CharacterParam.Reach]; break;
@@ -122,17 +138,17 @@ public class CharacterMeshCore : MonoBehaviour {
         animator.SetFloat(lastFrame, splineSamples.Sample(1 - t));
         animator.SetFloat(nextFrame, splineSamples.Sample(t));
     }
-    
+
     private Quaternion GetTiltRotation()
     {
-        var velocity = new Vector3(rb.velocity.x, rb.velocity.z, 0).normalized;
-        if (rb.velocity.magnitude < tiltSpeedThreshold)
+        var flatVelocity = new Vector3(velocity.x, velocity.z, 0).normalized;
+        if (velocity.magnitude < tiltSpeedThreshold)
         {
             return Quaternion.identity;
         }
         var direction = new Vector3(transform.forward.x, transform.forward.z, 0).normalized;
-        var cross = Vector3.Cross(direction, velocity);
-        var dot = Vector3.Dot(direction, velocity);
+        var cross = Vector3.Cross(direction, flatVelocity);
+        var dot = Vector3.Dot(direction, flatVelocity);
         if (dot > 0.999999f)
         {
             return Quaternion.identity;
@@ -145,7 +161,7 @@ public class CharacterMeshCore : MonoBehaviour {
             cross.x,
             cross.y,
             cross.z,
-            Mathf.Sqrt((direction.magnitude * direction.magnitude) * (velocity.magnitude * velocity.magnitude)) + dot
+            Mathf.Sqrt((direction.magnitude * direction.magnitude) * (flatVelocity.magnitude * flatVelocity.magnitude)) + dot
         );
     }
 
