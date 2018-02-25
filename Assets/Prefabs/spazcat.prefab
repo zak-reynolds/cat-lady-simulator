@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 4791019504923830}
   - component: {fileID: 114070987810787496}
   - component: {fileID: 54765974353376448}
+  - component: {fileID: 114029746638985642}
   m_Layer: 0
   m_Name: spazcat
   m_TagString: Untagged
@@ -1279,6 +1280,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114029746638985642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529281694130136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8166a5907288e498e1aaaaadde1b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationDamping: 10
+  velocityDeadZone: 0.1
+  tiltSpeedThreshold: 5
+  tiltDamping: 8
+  drawGizmos: 1
 --- !u!114 &114070987810787496
 MonoBehaviour:
   m_ObjectHideFlags: 1

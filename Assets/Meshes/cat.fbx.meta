@@ -44,6 +44,17 @@ ModelImporter:
     100072: thigh.r
     100074: upperarm.l
     100076: upperarm.r
+    100078: foot.l
+    100080: foot.l_end
+    100082: foot.r
+    100084: foot.r_end
+    100086: hand.l
+    100088: hand.l_end
+    100090: hand.r
+    100092: hand.r_end
+    100094: head
+    100096: head_end
+    100098: neck
     400000: Armature
     400002: backpaw.l
     400004: backpaw.l_end
@@ -83,11 +94,26 @@ ModelImporter:
     400072: thigh.r
     400074: upperarm.l
     400076: upperarm.r
+    400078: foot.l
+    400080: foot.l_end
+    400082: foot.r
+    400084: foot.r_end
+    400086: hand.l
+    400088: hand.l_end
+    400090: hand.r
+    400092: hand.r_end
+    400094: head
+    400096: head_end
+    400098: neck
     2100000: skin
     4300000: Cat
     7400000: Armature|Idle
     7400002: Armature|Stand
     7400004: Armature|Sprint
+    7400006: Armature|Run-Pass
+    7400008: Armature|Run-Reach
+    7400010: Armature|Walk-Pass
+    7400012: Armature|Walk-Reach
     9500000: //RootNode
     13700000: Cat
   externalObjects: {}
@@ -103,13 +129,24 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'hip.r' : rotation
+      error = 3.223549 deg\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Armature|Idle' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'spine' has translation animation that will
+      be discarded.\n\t'spine.003' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'spine.004' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'hip.l' has translation
+      animation that will be discarded.\n\t'hip.l' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'hip.r' has translation
+      animation that will be discarded.\n\t'hip.r' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -141,13 +178,91 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/hip.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l/foot.l_end
+        weight: 1
+      - path: Armature/hip.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r/foot.r_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/spine.001
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head/head_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l/hand.l_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r/hand.r_end
+        weight: 1
+      - path: Armature/tail
+        weight: 1
+      - path: Armature/tail/tail.001
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006/tail.006_end
+        weight: 1
+      - path: Cat
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 4ccbaae351fab0d4b97b2c7146dc4898, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Stand
-      takeName: Armature|Stand
+      name: Armature|Run-Reach
+      takeName: Armature|Run-Reach
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -169,22 +284,100 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/hip.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l/foot.l_end
+        weight: 1
+      - path: Armature/hip.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r/foot.r_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/spine.001
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head/head_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l/hand.l_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r/hand.r_end
+        weight: 1
+      - path: Armature/tail
+        weight: 1
+      - path: Armature/tail/tail.001
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006/tail.006_end
+        weight: 1
+      - path: Cat
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 4ccbaae351fab0d4b97b2c7146dc4898, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Sprint
-      takeName: Armature|Sprint
-      firstFrame: 1
-      lastFrame: 10
+      name: Armature|Walk-Pass
+      takeName: Armature|Walk-Pass
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -197,9 +390,299 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/hip.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l/foot.l_end
+        weight: 1
+      - path: Armature/hip.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r/foot.r_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/spine.001
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head/head_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l/hand.l_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r/hand.r_end
+        weight: 1
+      - path: Armature/tail
+        weight: 1
+      - path: Armature/tail/tail.001
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006/tail.006_end
+        weight: 1
+      - path: Cat
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 4ccbaae351fab0d4b97b2c7146dc4898, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Walk-Reach
+      takeName: Armature|Walk-Reach
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/hip.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l/foot.l_end
+        weight: 1
+      - path: Armature/hip.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r/foot.r_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/spine.001
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head/head_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l/hand.l_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r/hand.r_end
+        weight: 1
+      - path: Armature/tail
+        weight: 1
+      - path: Armature/tail/tail.001
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006/tail.006_end
+        weight: 1
+      - path: Cat
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 4ccbaae351fab0d4b97b2c7146dc4898, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Run-Pass
+      takeName: Armature|Run-Pass
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/hip.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l
+        weight: 1
+      - path: Armature/hip.l/thigh.l/calf.l/foot.l/foot.l_end
+        weight: 1
+      - path: Armature/hip.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r
+        weight: 1
+      - path: Armature/hip.r/thigh.r/calf.r/foot.r/foot.r_end
+        weight: 1
+      - path: Armature/spine
+        weight: 1
+      - path: Armature/spine/spine.001
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/neck/head/head_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.l/upperarm.l/lowerarm.l/hand.l/hand.l_end
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r
+        weight: 1
+      - path: Armature/spine/spine.001/spine.002/spine.003/spine.004/shoulder.r/upperarm.r/lowerarm.r/hand.r/hand.r_end
+        weight: 1
+      - path: Armature/tail
+        weight: 1
+      - path: Armature/tail/tail.001
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006
+        weight: 1
+      - path: Armature/tail/tail.001/tail.002/tail.003/tail.004/tail.005/tail.006/tail.006_end
+        weight: 1
+      - path: Cat
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 4ccbaae351fab0d4b97b2c7146dc4898, type: 2}
       additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
@@ -233,8 +716,363 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-    human: []
-    skeleton: []
+    human:
+    - boneName: Armature
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: thigh.l
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: thigh.r
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: calf.l
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: calf.r
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: foot.l
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: foot.r
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine.001
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shoulder.l
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: shoulder.r
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: upperarm.l
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: upperarm.r
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: lowerarm.l
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: lowerarm.r
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: hand.l
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: hand.r
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: spine.002
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: cat(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: cat(Clone)
+      position: {x: 0, y: 1.3127884, z: 0.14682257}
+      rotation: {x: -1, y: -1.7925108e-14, z: 0.00000021265062, w: -0.0000000842937}
+      scale: {x: 100, y: 100, z: 100}
+    - name: spine
+      parentName: Armature
+      position: {x: 7.3178125e-19, y: 0.0049086343, z: 0.0026463734}
+      rotation: {x: 0.9713392, y: -0.0000025785412, z: -0.00001053711, w: 0.2376977}
+      scale: {x: 0.9999998, y: 0.99999976, z: 1}
+    - name: spine.001
+      parentName: spine
+      position: {x: -1.1823431e-13, y: 0.0012371558, z: 3.763606e-10}
+      rotation: {x: 0.000005486544, y: 0.89098334, z: 0.45403615, w: -0.000008564277}
+      scale: {x: 1.0000013, y: 1.000001, z: 1.0000006}
+    - name: spine.002
+      parentName: spine.001
+      position: {x: -3.6379786e-13, y: 0.0017396569, z: 2.3680016e-10}
+      rotation: {x: 0.059732966, y: -0.0000047918957, z: -0.0000004343828, w: 0.9982144}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+    - name: spine.003
+      parentName: spine.002
+      position: {x: -7.821654e-13, y: 0.0016984636, z: 2.7128777e-10}
+      rotation: {x: 0.11723934, y: 0.000005564733, z: -0.0000007584904, w: 0.99310374}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: spine.004
+      parentName: spine.003
+      position: {x: 1.7462298e-12, y: 0.0018252295, z: -2.2841788e-10}
+      rotation: {x: -0.14984603, y: -0.0000017677557, z: 0.00000039760818, w: 0.98870933}
+      scale: {x: 1.0000004, y: 0.99999994, z: 0.99999994}
+    - name: neck
+      parentName: spine.004
+      position: {x: 7.275957e-13, y: 0.0016688351, z: -1.6516537e-10}
+      rotation: {x: 0.16057408, y: 0.0000022354072, z: -0.0000003494511, w: 0.98702383}
+      scale: {x: 1, y: 1.0000004, z: 1.0000005}
+    - name: head
+      parentName: neck
+      position: {x: -1.4551915e-13, y: 0.0016623336, z: -1.14052906e-10}
+      rotation: {x: -0.017465232, y: -0.00000011942596, z: 5.5524646e-10, w: 0.99984753}
+      scale: {x: 1.0000007, y: 0.99999994, z: 1.0000002}
+    - name: head_end
+      parentName: head
+      position: {x: -0, y: 0.00207814, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder.l
+      parentName: spine.004
+      position: {x: 7.275957e-13, y: 0.0016688351, z: -1.6516537e-10}
+      rotation: {x: -0.5678723, y: -0.4223507, z: -0.42431355, w: 0.5648884}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000005}
+    - name: upperarm.l
+      parentName: shoulder.l
+      position: {x: 7.916242e-11, y: 0.0034141885, z: -1.9907019e-10}
+      rotation: {x: -0.11475728, y: -0.9933549, z: -0.0007845756, w: -0.00873315}
+      scale: {x: 0.9999998, y: 1.0000018, z: 1.0000015}
+    - name: lowerarm.l
+      parentName: upperarm.l
+      position: {x: -0, y: 0.0030067037, z: 1.938315e-10}
+      rotation: {x: -0.0015489601, y: 0.9995534, z: -0.029824648, w: -0.0011090165}
+      scale: {x: 1.0000007, y: 0.9999998, z: 0.99999994}
+    - name: hand.l
+      parentName: lowerarm.l
+      position: {x: -3.608875e-11, y: 0.0024808343, z: 2.9685907e-11}
+      rotation: {x: 0.12759992, y: 0.07795303, z: 0.1847537, w: 0.97134316}
+      scale: {x: 1.0000002, y: 1.0000004, z: 0.9999998}
+    - name: hand.l_end
+      parentName: hand.l
+      position: {x: -0, y: 0.0010230547, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulder.r
+      parentName: spine.004
+      position: {x: 7.275957e-13, y: 0.0016688351, z: -1.6516537e-10}
+      rotation: {x: -0.57490695, y: 0.43176752, z: 0.41473243, w: 0.5577239}
+      scale: {x: 1.0000011, y: 1.0000012, z: 1.0000004}
+    - name: upperarm.r
+      parentName: shoulder.r
+      position: {x: -5.3551046e-11, y: 0.0034141887, z: -3.958121e-11}
+      rotation: {x: 0.11475475, y: -0.99336153, z: 0.0011400877, w: -0.007928906}
+      scale: {x: 0.99999964, y: 1.0000015, z: 1.0000017}
+    - name: lowerarm.r
+      parentName: upperarm.r
+      position: {x: 2.9103829e-12, y: 0.0030067037, z: -8.1490726e-12}
+      rotation: {x: 0.001548625, y: 0.9995533, z: -0.029824901, w: 0.0011079927}
+      scale: {x: 1.0000007, y: 0.99999934, z: 0.9999995}
+    - name: hand.r
+      parentName: lowerarm.r
+      position: {x: 3.4924596e-12, y: 0.0024808354, z: 3.929017e-12}
+      rotation: {x: 0.12760016, y: -0.077952325, z: -0.18475355, w: 0.9713433}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000006}
+    - name: hand.r_end
+      parentName: hand.r
+      position: {x: -0, y: 0.0010230547, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hip.l
+      parentName: Armature
+      position: {x: 7.3178125e-19, y: 0.0049086343, z: 0.0026463734}
+      rotation: {x: 0.33786452, y: 0.14664087, z: -0.5492786, w: -0.7500914}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000002}
+    - name: thigh.l
+      parentName: hip.l
+      position: {x: -1.6763806e-10, y: 0.0017638182, z: -7.4505804e-11}
+      rotation: {x: 0.2747425, y: 0.20507844, z: -0.51008546, w: 0.7888424}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: calf.l
+      parentName: thigh.l
+      position: {x: -8.1490724e-11, y: 0.003939323, z: -2.089655e-10}
+      rotation: {x: -0.0067372164, y: 0.99957174, z: 0.028301906, w: -0.003177389}
+      scale: {x: 1.0000011, y: 1, z: 1.0000006}
+    - name: foot.l
+      parentName: calf.l
+      position: {x: 5.820766e-11, y: 0.0031876215, z: 9.225914e-11}
+      rotation: {x: 0.9840105, y: 0.025208868, z: 0.023940386, w: 0.1746843}
+      scale: {x: 0.99999946, y: 1, z: 0.9999998}
+    - name: foot.l_end
+      parentName: foot.l
+      position: {x: -0, y: 0.0011945385, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tail
+      parentName: Armature
+      position: {x: 7.3178125e-19, y: 0.0049086343, z: 0.0026463734}
+      rotation: {x: 0.39365256, y: -0.000000004075956, z: 0.0000000040734456, w: 0.91925937}
+      scale: {x: 0.9999998, y: 0.99999964, z: 0.99999964}
+    - name: tail.001
+      parentName: tail
+      position: {x: 1.8626451e-11, y: 0.0016523012, z: 3.2945535e-10}
+      rotation: {x: 0.15748766, y: 0.00000011907366, z: 0.000000015786725, w: 0.987521}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
+    - name: tail.002
+      parentName: tail.001
+      position: {x: 5.5879353e-11, y: 0.0013558654, z: -1.2747478e-10}
+      rotation: {x: 0.11435726, y: 0.000000004500605, z: 0.000000026435334, w: 0.9934397}
+      scale: {x: 0.9999998, y: 1.0000001, z: 0.9999999}
+    - name: tail.003
+      parentName: tail.002
+      position: {x: 1.11758706e-10, y: 0.0011673612, z: 1.3038516e-10}
+      rotation: {x: 0.055575542, y: 0.00000010454062, z: 0.000000010418267, w: 0.9984545}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: tail.004
+      parentName: tail.003
+      position: {x: -0, y: 0.0010626217, z: 4.0861778e-10}
+      rotation: {x: 0.029722396, y: -0.00000023028653, z: 0.000000008684122, w: 0.99955827}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: tail.005
+      parentName: tail.004
+      position: {x: -0, y: 0.0012249068, z: 4.1443854e-10}
+      rotation: {x: -0.000000007530463, y: 0.99936897, z: 0.035521965, w: 0.0000000771198}
+      scale: {x: 1.0000011, y: 1.0000004, z: 1.0000015}
+    - name: tail.006
+      parentName: tail.005
+      position: {x: -3.7252902e-11, y: 0.0010849484, z: -9.0338287e-10}
+      rotation: {x: -0.0056923833, y: 0.0000000023400935, z: -0.000000006350287, w: 0.9999838}
+      scale: {x: 1.0000015, y: 1.0000002, z: 1.0000014}
+    - name: tail.006_end
+      parentName: tail.006
+      position: {x: -0, y: 0.0007513867, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hip.r
+      parentName: Armature
+      position: {x: -7.3178125e-19, y: 0.0049086343, z: 0.0026463734}
+      rotation: {x: 0.644822, y: 0.5684596, z: -0.008007288, w: -0.51087606}
+      scale: {x: 1.0000002, y: 1.0000014, z: 1.0000012}
+    - name: thigh.r
+      parentName: hip.r
+      position: {x: 2.6077032e-10, y: 0.0017638186, z: -1.4901161e-10}
+      rotation: {x: 0.5787851, y: 0.57171905, z: 0.026046015, w: 0.58091897}
+      scale: {x: 0.9999994, y: 0.9999993, z: 0.99999964}
+    - name: calf.r
+      parentName: thigh.r
+      position: {x: -2.363231e-10, y: 0.003939322, z: -2.1827873e-10}
+      rotation: {x: 0.0067374394, y: 0.9995717, z: 0.028301887, w: 0.0031766884}
+      scale: {x: 1.0000018, y: 1.0000014, z: 0.9999999}
+    - name: foot.r
+      parentName: calf.r
+      position: {x: -1.7462298e-10, y: 0.0031876205, z: 2.500019e-10}
+      rotation: {x: 0.98401064, y: -0.025208818, z: -0.023939047, w: 0.17468438}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000001}
+    - name: foot.r_end
+      parentName: foot.r
+      position: {x: -0, y: 0.0011945385, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cat
+      parentName: cat(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 16.998966, y: 16.999565, z: 16.99869}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -242,13 +1080,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Armature
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
