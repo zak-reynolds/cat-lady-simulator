@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class CatMovement : MonoBehaviour {
     // Use this for initialization
     public Rigidbody rigidbody;
-    public Transform spot; 
+    public Transform [] spots; 
     private NavMeshAgent navMeshAgent;
     float TurnTimer = 0;
     float TurnRate = 0;
@@ -15,7 +15,7 @@ public class CatMovement : MonoBehaviour {
 
 	void Start () {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.destination = spot.position;
+        navMeshAgent.destination = spots[Random.Range(0, spots.Length)].position;
 	}
 	
 	// Update is called once per frame

@@ -1308,6 +1308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 54765974353376448}
+  spots: []
   speed: 30
 --- !u!136 &136690950716306948
 CapsuleCollider:
