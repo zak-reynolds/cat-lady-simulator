@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8166a5907288e498e1aaaaadde1b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityMethod: 1
   rotationDamping: 10
   velocityDeadZone: 0.1
   tiltSpeedThreshold: 5
@@ -1308,6 +1309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 54765974353376448}
+  spot: {fileID: 0}
   speed: 30
 --- !u!136 &136690950716306948
 CapsuleCollider:
